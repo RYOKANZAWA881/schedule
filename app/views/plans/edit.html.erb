@@ -1,0 +1,55 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Bootstrap Datepicker CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<!-- Bootstrap JS -->
+<!-- common.cssを再適用 -->
+<link rel="stylesheet" href="/assets/common.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<p class="page_title">スケジュールの編集</p>
+<%= render "shared/error", obj: @plan %>
+<%= form_with model:@plan, url: plan_path(@plan), method: :patch do |form| %>
+    <table>
+        <tr>
+            <th><%= form.label:title, "タイトル" %></th>
+            <td><%= form.text_field:title %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label:start_date, "開始日" %></th>
+            <td><%= form.text_field:start_date, class: "datepicker" %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label:end_date, "終了日" %></th>
+            <td><%= form.text_field:end_date, class: "datepicker" %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label:all_day, "終日の場合はチェックを入れます" %></th>
+            <td><%= form.check_box :all_day %></td>
+        </tr>
+    </table>
+    <span class="memo_title">スケジュールメモ</span><br>
+    <%= form.text_area:memo, class:"memo_area"%>
+    <%= form.submit "保存", class:"button_style" %>
+<% end %>
+
+<span class="link_span"><%= link_to "スケジュール一覧に戻る", plans_path %></span>
+
+<script>
+    // Datepickerを有効にする
+    $(document).ready(function(){
+        $('.datepicker').datepicker({
+            format: 'yyyy/mm/dd' // 日付のフォーマットを指定
+        });
+    });
+</script>
+
+
+

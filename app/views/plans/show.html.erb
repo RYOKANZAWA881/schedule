@@ -1,0 +1,32 @@
+<p class="page_title">スケジュールの詳細表示</p>
+ <table>
+   <tr>
+      <th>タイトル</th>
+      <td><%= @plan.title %></td>
+   </tr>
+   <tr>
+     <th>開始日</th>
+     <td><%= @plan.start_date %></td>
+   </tr>
+   <tr>
+     <th>終了日</th>
+     <td><%= @plan.end_date %></td>
+   </tr>
+   <tr>
+     <th>終日</th>
+     <td>
+        <% if @plan.all_day == "1" %>
+            <%= "○" %>
+        <% else %>
+            <%= "" %>
+        <% end %>
+     </td>
+   </tr>
+   <tr>
+     <th>スケジュールメモ</th>
+     <td><%= @plan.memo %></td>
+   </tr>
+ </table>
+
+ <%= link_to "スケジュールを編集する", edit_plan_path(@plan), class:"link_span" %><br>
+ <%= link_to "スケジュール一覧に戻る", plans_path, class:"link_span" %>
