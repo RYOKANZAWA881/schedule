@@ -1,0 +1,77 @@
+body{
+  margin: 0 30px;
+}
+
+header {
+    width: 100%;
+}
+
+.error_message {
+  color: red; /* 赤色の文字 */
+  display: block; /* ブロック要素として表示 */
+  margin-bottom: 5px; /* 下側のマージンを追加して改行されるようにする */
+}
+
+/* ページタイトルのスタイル */
+.page_title {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* フラッシュメッセージのスタイル */
+.notice {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* テーブルのスタイル */
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #000; /* セルに1pxの黒い罫線を追加 */
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+table.show_table th,
+table.show_table td {
+  text-align: left;
+}
+
+/* 登録件数と本日の日付のスタイル */
+.content_span {
+  display: inline-block;
+}
+
+/* リンクのスタイル */
+.link_span {
+  display: inline-block;
+  text-decoration: none; /* 下線を非表示にする */
+}
+
+.memo_title{
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.memo_area {
+  display: block;
+  width: 60%;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.button_style{
+  display: block;
+  margin-bottom: 10px;
+}
